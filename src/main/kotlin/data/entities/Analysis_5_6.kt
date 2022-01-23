@@ -8,5 +8,5 @@ data class Analysis_5_6(
     val name: String,
     val hours: MutableState<String> = mutableStateOf(""),
     val specificGravity: MutableState<String> = mutableStateOf(""),
-    val quantity: MutableState<String> = mutableStateOf(""),
+    val quantity: MutableState<String> = mutableStateOf("")
 )

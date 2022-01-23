@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import data.entities.Analysis
 import data.entities.Analysis_5_6
@@ -46,16 +47,18 @@ fun ItemAnalysisInput(
                 )
             }
             Spacer(Modifier.width(25.dp))
-            Column {
+            Column(Modifier.weight(1f)) {
                 Text(
                     text = "Наименование: ${analysis.name}",
-                    style = MaterialTheme.typography.subtitle2
+                    style = MaterialTheme.typography.subtitle2,
+                    overflow = TextOverflow.Ellipsis
                 )
                 analysis.referenceValue?.let {
                     Spacer(Modifier.height(16.dp))
                     Text(
                         text = "Референсное значение: $it",
-                        style = MaterialTheme.typography.subtitle2
+                        style = MaterialTheme.typography.subtitle2,
+                        overflow = TextOverflow.Ellipsis
                     )
                 }
             }
@@ -66,7 +69,7 @@ fun ItemAnalysisInput(
                 value = analysis.result.value,
                 onValueChange = { analysis.result.value = it },
                 textStyle =  MaterialTheme.typography.subtitle2,
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.weight(1f),
                 singleLine = true
             )
         }

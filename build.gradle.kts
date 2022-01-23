@@ -18,7 +18,7 @@ repositories {
 
 dependencies {
     implementation(compose.desktop.currentOs)
-
+    implementation("org.apache.poi:poi-ooxml:5.1.0")
 }
 
 tasks.withType<KotlinCompile> {
@@ -29,9 +29,9 @@ compose.desktop {
     application {
         mainClass = "MainKt"
         nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+            targetFormats(TargetFormat.Dmg, TargetFormat.Exe, TargetFormat.Deb)
             packageName = "CreationOfForms"
-            packageVersion = "1.0.0"
+            packageVersion = "1.0.1"
 //            appResourcesRootDir.set(project.layout.projectDirectory.dir("resources"))
         }
     }

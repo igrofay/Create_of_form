@@ -20,6 +20,7 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toSize
+import createDocx
 import data.entities.Patient
 
 @Composable
@@ -137,7 +138,9 @@ fun ViewCreatingForm(
                 delayMillis = 600
             ){
                 FloatingActionButton(
-                    onClick = {}
+                    onClick = {
+                        createDocx(patient)
+                    }
                 ){
                     Icon(Icons.Default.Edit , null)
                 }

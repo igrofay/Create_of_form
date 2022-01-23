@@ -1,8 +1,9 @@
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.*
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.window.application
 import creating_form.WindowCreatingForm
-import data.entities.Patient
 import list_analyzes.DialogListAnalyzes
 
 fun main() = application {
