@@ -1,5 +1,6 @@
 package list_analyzes
 
+import allData
 import androidx.compose.foundation.VerticalScrollbar
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -16,21 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import data.entities.Analysis
 
-private val  listAnalyzes = listOf(
-    Analysis("4.1.1","ТТГ","0.270 - 4.200 мкМЕ/мл"),
-    Analysis("4.1.2","Т3 общий","1.20 - 3.10 нмоль/л"),
-    Analysis("4.1.3","Т3 свободный","3.10 - 6.80 пмоль/л"),
-    Analysis("4.1.4","Т4 общий","66.00 - 181.00 нмоль/л"),
-    Analysis("4.1.5","Т4 свободный","10.80 - 22.00 пмоль/л"),
-    Analysis("4.1.6","Определение содержания антител к тиреопероксидазе в крови (анти-ТПО)","0.00 - 34.00 МЕ/мл"),
-    Analysis("4.2.1","Исследование уровня простатспецифическогоантигена общего в крови (ПСА)","0.000 - 4.000 нг/мл"),
-    Analysis("4.3.1","Определение концентрации N-терминального фрагмента" +
-            " предшественника мозгового натрийуретического пептида  в сыворотке крови.","<125.00 пг/мл"),
-    Analysis("4.4.1","Гепатит C, anti-HCV сумм. (кач)","отрицательно"),
-    Analysis("4.4.2","Гепатит В, HBs Ag (кач)","отрицательно"),
-    Analysis("4.5.1","Сифилис сум. АТ (IgG и IgM) (кач)","отрицательно"),
-    Analysis("4.5.2","Сифилис RPR (п/кол)","отрицательно")
-)
+private val  listAnalyzes = allData.getListAnalyzes_4()
+
 @Composable
 fun ELISA_Diagnostics(
     addAnalysis: (analysis : Analysis)->Unit

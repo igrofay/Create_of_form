@@ -1,5 +1,6 @@
 package list_analyzes
 
+import allData
 import androidx.compose.foundation.VerticalScrollbar
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -11,12 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import data.entities.Analysis
 
-private val  listAnalyzes = listOf(
-    Analysis("3.1","Исследование уровня фибриногена в крови","1.80 - 3.50 г/л"),
-    Analysis("3.2","Определение протромбинового (тромбопластинового) времени в крови или плазме (ПТВ)","11.00 - 16.00 сек"),
-    Analysis("3.3","Определение Активированного частичного тромбопластинового времени (АЧТВ)","21.1 - 36.5 сек"),
-    Analysis("3.4","Определение концентрации D-димера в крови","0.00 - 0.55 мкгFEU/мл")
-)
+private val  listAnalyzes = allData.getListAnalyzes_3()
 
 @Composable
 fun CoagulationOptions(

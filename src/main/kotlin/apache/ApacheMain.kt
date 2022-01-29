@@ -343,84 +343,6 @@ fun createDocx(data: Patient) {
 
     }
 
-//    data.listAnalyzes_5_6.forEach {
-//        val dDimer = document.createParagraph()
-//        dDimer.alignment = ParagraphAlignment.LEFT
-//        dDimer.spacingAfter = 0
-//        var dDimerRun = dDimer.createRun()
-//        dDimerRun.setText("Название/показатель: Анализ мочи по Зимницкому")
-//        dDimerRun.fontFamily = "Times New Roman"
-//        dDimerRun.fontSize = 11
-//        dDimerRun.textPosition = 20
-//
-//        //create table
-//        var table = document.createTable()
-//        //create first row
-//        var tableRowOne = table.getRow(0)
-//        var ftr = tableRowOne.getCell(0)
-//        //create second row
-//        var lol = tableRowOne.addNewTableCell()
-//        var loll = tableRowOne.addNewTableCell()
-//
-//        it.quantity.value.forEach { iit ->
-//            //fill row
-//            var l = ftr.addParagraph()
-//            l.alignment = ParagraphAlignment.LEFT
-//            l.spacingAfter = 0
-//            var lRun = l.createRun()
-//            lRun.setText(iit.toString())
-//            lRun.fontFamily = "Times New Roman"
-//            lRun.fontSize = 11
-//            lRun.textPosition = 15
-//        }
-//        ftr.removeParagraph(0)
-//
-//        it.forEach { listIT ->
-//            var l2 = lol.addParagraph()
-//            l2.alignment = ParagraphAlignment.LEFT
-//            l2.spacingAfter = 0
-//            var l2Run = l2.createRun()
-//            l2Run.setText(listIT.result.value)
-//            l2Run.fontFamily = "Times New Roman"
-//            l2Run.fontSize = 11
-//            l2Run.textPosition = 15
-//        }
-//        lol.removeParagraph(0)
-//
-//        it.forEach { listIT ->
-//            //fill third row
-//            var l3 = loll.addParagraph()
-//            l3.alignment = ParagraphAlignment.LEFT
-//            l3.spacingAfter = 0
-//            var l3Run = l3.createRun()
-//            if (listIT.referenceValue == null) {
-//                l3Run.setText("")
-//            } else {
-//                l3Run.setText(listIT.referenceValue)
-//            }
-//            l3Run.fontFamily = "Times New Roman"
-//            l3Run.fontSize = 11
-//            l3Run.textPosition = 15
-//        }
-//        loll.removeParagraph(0)
-//
-//
-//        table.rows.forEach { rowIT ->
-//            rowIT.tableCells.forEach {
-//                it.setWidth("4000")
-//            }
-//        }
-//
-//        val space = document.createParagraph()
-//        space.alignment = ParagraphAlignment.CENTER
-//        space.spacingAfter = 0
-//        val spaceRun = space.createRun()
-//        spaceRun.setText("")
-//        spaceRun.fontFamily = "Times New Roman"
-//        spaceRun.fontSize = 10
-//        spaceRun.textPosition = 20
-//    }
-
     val space = document.createParagraph()
     space.alignment = ParagraphAlignment.CENTER
     space.spacingAfter = 0
@@ -460,15 +382,7 @@ fun createDocx(data: Patient) {
     run = paragraph.createRun()
     run.fontFamily = "Times New Roman"
     run.setText("Заведующая лабораторией:      ")
-//    run = paragraph.createRun()
-//    val imagePath: Path = Paths.get(ClassLoader.getSystemResource(stamp).toURI())
-//    inp = FileInputStream(imagePath.toString())
-//    run.addPicture(inp, Document.PICTURE_TYPE_PNG, stamp, Units.toEMU(150.0), Units.toEMU(40.0))
-//    inp.close()
-//    val drawing: CTDrawing = run.ctr.getDrawingArray(0)
-//    anchor = getAnchorWithGraphic(drawing, stamp, false /*behind text*/)
-//    drawing.anchorArray = arrayOf(anchor)
-//    drawing.removeInline(0)
+
 
     useResource(stamp){
         run?.addPicture(it, Document.PICTURE_TYPE_JPEG, stamp, Units.toEMU(100.0), Units.toEMU(33.0))
@@ -500,8 +414,8 @@ fun createDocx(data: Patient) {
 
 }
 
-fun convertTextFileToString(fileName: String?): String? {
-    useResource(fileName!!){ inputStream->
+fun convertTextFileToString(fileName: String?): String {
+    useResource(fileName!!){ inputStream ->
         return  inputStream.bufferedReader().use { it.readText() }
     }
 }
