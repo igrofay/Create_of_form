@@ -12,6 +12,7 @@ var womanInputFile = "C:\\resDocFolder\\input\\womanInputFile.txt"
 class DataFromFile(private val isMan: MutableState<Boolean>) {
 
     fun getListAnalyzes_1(): List<Analysis> {
+        print(isMan.value)
         return if (isMan.value) {
             manListAnalyzes_1
         } else {

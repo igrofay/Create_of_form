@@ -12,14 +12,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import data.entities.Analysis
 
-private val listAnalyzes = allData.getListAnalyzes_1()
-
-private val analyzes_1_1 = allData.getListAnalyzes_1_1()
 
 @Composable
 fun HematologicalOptions(
     addAnalysis: (analysis : Analysis)->Unit
 ){
+    val listAnalyzes = allData.getListAnalyzes_1()
+    val analyzes_1_1 = allData.getListAnalyzes_1_1()
     val stateVertical = rememberScrollState(0)
     Box(
         Modifier.fillMaxSize(),
