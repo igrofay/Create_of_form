@@ -23,6 +23,24 @@ fun ChemicalMicroscopicOptions(
     addAnalysis: (Analysis)->Unit,
     addAnalysis_5_6: (Analysis_5_6) -> Unit
 ){
+    val listAnalyzes = allData.getListAnalyzes_5()
+    val analyzes_5_1 = allData.getListAnalyzes_5_1()
+    val analysis_5_3 = allData.getListAnalyzes_5_3()
+    val analysis_5_5 = allData.getListAnalyzes_5_5()
+    val analysis_5_6 = allData.getListAnalyzes_5_6()
+    val analysis_5_7 = allData.getListAnalyzes_5_7()
+
+    fun checkItem(
+        analysis: Analysis ,
+        add: (Analysis) ->Unit
+    )= when (analysis.id){
+        "5.1"-> analyzes_5_1.forEach { add(it) }
+        "5.3"-> analysis_5_3.forEach { add(it) }
+        "5.5" -> analysis_5_5.forEach { add(it) }
+        "5.7" -> analysis_5_7.forEach { add(it) }
+        else -> add(analysis)
+    }
+
     var search by remember {
         mutableStateOf("")
     }
@@ -80,26 +98,3 @@ fun ChemicalMicroscopicOptions(
         )
     }
 }
-
-private fun checkItem(
-    analysis: Analysis ,
-    add: (Analysis) ->Unit
-)= when (analysis.id){
-    "5.1"-> analyzes_5_1.forEach { add(it) }
-    "5.3"-> analysis_5_3.forEach { add(it) }
-    "5.5" -> analysis_5_5.forEach { add(it) }
-    "5.7" -> analysis_5_7.forEach { add(it) }
-    else -> add(analysis)
-}
-
-private val listAnalyzes = allData.getListAnalyzes_5()
-
-private val analyzes_5_1 = allData.getListAnalyzes_5_1()
-
-private val analysis_5_3 = allData.getListAnalyzes_5_3()
-
-private val analysis_5_5 = allData.getListAnalyzes_5_5()
-
-private val analysis_5_6 = allData.getListAnalyzes_5_6()
-
-private val analysis_5_7 = allData.getListAnalyzes_5_7()

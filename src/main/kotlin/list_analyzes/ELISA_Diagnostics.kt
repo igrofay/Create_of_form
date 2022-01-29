@@ -17,12 +17,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import data.entities.Analysis
 
-private val  listAnalyzes = allData.getListAnalyzes_4()
-
 @Composable
 fun ELISA_Diagnostics(
     addAnalysis: (analysis : Analysis)->Unit
 ){
+    val  listAnalyzes = allData.getListAnalyzes_4()
     var search by remember {
         mutableStateOf("")
     }

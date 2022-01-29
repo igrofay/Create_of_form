@@ -12,12 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import data.entities.Analysis
 
-private val  listAnalyzes = allData.getListAnalyzes_3()
-
 @Composable
 fun CoagulationOptions(
     addAnalysis: (analysis : Analysis)->Unit
 ){
+    val  listAnalyzes = allData.getListAnalyzes_3()
     val stateVertical = rememberScrollState(0)
     Box(
         Modifier.fillMaxSize(),
