@@ -23,13 +23,21 @@ fun ChemicalMicroscopicOptions(
     addAnalysis: (Analysis)->Unit,
     addAnalysis_5_6: (Analysis_5_6) -> Unit
 ){
-    val listAnalyzes = allData.getListAnalyzes_5()
+    val listAnalyzes = allData.getListAnalyzes_5() + listOf(
+        Analysis("5.8","Капрограмма"),
+        Analysis("5.9","Исследование соскоба на энтеробиоз")
+    )
+
     val analyzes_5_1 = allData.getListAnalyzes_5_1()
     val analysis_5_3 = allData.getListAnalyzes_5_3()
     val analysis_5_5 = allData.getListAnalyzes_5_5()
     val analysis_5_6 = allData.getListAnalyzes_5_6()
     val analysis_5_7 = allData.getListAnalyzes_5_7()
-
+    val analysis_5_8 = listOf(
+        Analysis("5.8.1","Форма","Взрослые: оформленный. Дети: допускается неоформленный"),
+        //Я не всё ввел, удачи в 5.5  Excel
+        Analysis("5.8.27","Дрожжеподобные грибы","отсутствуют")
+    )
     fun checkItem(
         analysis: Analysis ,
         add: (Analysis) ->Unit
@@ -38,12 +46,14 @@ fun ChemicalMicroscopicOptions(
         "5.3"-> analysis_5_3.forEach { add(it) }
         "5.5" -> analysis_5_5.forEach { add(it) }
         "5.7" -> analysis_5_7.forEach { add(it) }
+        "5.8" -> analysis_5_8.forEach { add(it) }
         else -> add(analysis)
     }
 
     var search by remember {
         mutableStateOf("")
     }
+
 
     val searchList = remember {
         mutableStateListOf<Analysis>()

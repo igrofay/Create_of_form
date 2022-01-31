@@ -143,7 +143,7 @@ fun createDocx(data: Patient) {
     biomaterial.alignment = ParagraphAlignment.LEFT
     biomaterial.spacingAfter = 0
     val biomaterialRun = biomaterial.createRun()
-    biomaterialRun.setText("Вид  биоматериала: ${data.typeBiomat.value.nameRu}")
+    biomaterialRun.setText("Вид  биоматериала: ${data.typeBiomat.value}")
     biomaterialRun.fontFamily = "Times New Roman"
     biomaterialRun.fontSize = 11
     biomaterialRun.textPosition = 0

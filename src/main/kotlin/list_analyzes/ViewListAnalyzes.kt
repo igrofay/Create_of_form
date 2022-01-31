@@ -88,6 +88,18 @@ fun ViewListAnalyzes(
                 }
             )
         }
+        AnimatedVisibility(
+            visible = selectItem == Studies.MicroscopicExaminationUrogenitalTract,
+        ){
+            MicroscopicExaminationUrogenitalTract{
+                listAnalyzes.add(it)
+            }
+        }
+        AnimatedVisibility(
+            visible = selectItem == Studies.CytologicalStudies,
+        ){
+
+        }
     }
 }
 

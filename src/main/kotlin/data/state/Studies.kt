@@ -18,5 +18,12 @@ enum class Studies(
     ),
     Chemical_microscopic(
         "Химико-микроскопические\nисследования"
+    ),
+    MicroscopicExaminationUrogenitalTract(
+        "Микроскопические исследования\nурогенитального тракта"
+    ),
+    CytologicalStudies(
+        "Цитологические\nисследования"
     )
+
 }

@@ -20,7 +20,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toSize
 import data.entities.Patient
-import data.state.TypeBiomaterial
+import data.state.listTypeBiomaterial
 import org.jetbrains.skia.FontWidth
 
 @Composable
@@ -141,16 +141,16 @@ fun StandardData(
 
 
 @Composable
-fun DropDownMenu(selectedItem: MutableState<TypeBiomaterial>){
+fun DropDownMenu(selectedItem: MutableState<String>){
     var expanded by remember { mutableStateOf(false) }
     var textfieldSize by remember { mutableStateOf(Size.Zero)}
     val rotate by animateFloatAsState(
         if (expanded) 180f else 0f
     )
-    val list = TypeBiomaterial.values()
+    val list = listTypeBiomaterial
     Column {
         OutlinedTextField(
-            value = selectedItem.value.nameRu,
+            value = selectedItem.value,
             onValueChange = {},
             singleLine = true,
             modifier = Modifier
@@ -179,7 +179,7 @@ fun DropDownMenu(selectedItem: MutableState<TypeBiomaterial>){
                     selectedItem.value = label
                     expanded = false
                 }) {
-                    Text(text = label.nameRu)
+                    Text(text = label)
                 }
             }
         }
