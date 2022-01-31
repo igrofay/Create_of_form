@@ -98,7 +98,9 @@ fun ViewListAnalyzes(
         AnimatedVisibility(
             visible = selectItem == Studies.CytologicalStudies,
         ){
-
+            CytologicalStudies{
+                listAnalyzes.add(it)
+            }
         }
     }
 }
