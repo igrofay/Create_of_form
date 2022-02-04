@@ -69,6 +69,7 @@ fun StandardData(
                             textStyle = styleText
                         )
                     }
+                    Spacer(Modifier.height(height))
                 }
                 Spacer(Modifier.width(width))
                 Column(
@@ -100,7 +101,20 @@ fun StandardData(
                         )
                     }
                 }
+            }
+            Row(
+                verticalAlignment = Alignment.CenterVertically
 
+            ){
+                Text(text = "Контрагент", style = styleText)
+                Spacer(Modifier.width(delimiterWidth))
+                OutlinedTextField(
+                    value = patient.contractor.value,
+                    singleLine = true,
+                    onValueChange = { patient.contractor.value = it },
+                    textStyle = styleText,
+                    modifier = Modifier.fillMaxWidth(1f)
+                )
             }
             Spacer(Modifier.height(height))
             Row(

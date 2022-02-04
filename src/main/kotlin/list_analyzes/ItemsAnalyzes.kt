@@ -53,7 +53,7 @@ fun ItemAnalysis(
             Text(
                 text = analysis.name,
                 style = typography.subtitle1,
-                maxLines = 1 , overflow = TextOverflow.Ellipsis
+                maxLines = 3 , overflow = TextOverflow.Ellipsis
             )
         }
     }

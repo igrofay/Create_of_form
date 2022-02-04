@@ -15,7 +15,8 @@ data class Patient (
         val typeBiomat: MutableState<String> = mutableStateOf(""),
         val listAnalyzes: SnapshotStateList<Analysis> = mutableStateListOf(),
         val listAnalyzes_5_6: SnapshotStateList<Analysis_5_6> = mutableStateListOf(),
-        val comment: MutableState<String> = mutableStateOf("")
+        val comment: MutableState<String> = mutableStateOf(""),
+        val contractor: MutableState<String> = mutableStateOf("")
 ){
         fun reset(){
                 name.value = ""
@@ -26,5 +27,6 @@ data class Patient (
                 listAnalyzes_5_6.clear()
                 comment.value = ""
                 typeBiomat.value=""
+                contractor.value =""
         }
 }
