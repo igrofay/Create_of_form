@@ -48,12 +48,16 @@ fun ViewCreatingForm(
                 ItemAnalysisInput(
                     analysis,
                     size.width
-                )
+                ){
+                    patient.listAnalyzes.remove(analysis)
+                }
             }
             patient.listAnalyzes_5_6.forEach {
                 ItemAnalysis_5_6_Input(
                     it,size.width
-                )
+                ){
+                    patient.listAnalyzes_5_6.remove(it)
+                }
             }
             Comment(
                 patient.comment,
